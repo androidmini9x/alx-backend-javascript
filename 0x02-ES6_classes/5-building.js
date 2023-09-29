@@ -18,5 +18,6 @@ export default class Building {
     if (typeof val !== 'number') {
       throw new TypeError('sqft must be a number');
     }
+    this._sqft = val;
   }
 }
