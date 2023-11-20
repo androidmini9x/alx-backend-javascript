@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/students', (req, res) => {
   res.statusCode = 200;
-  res.write('This is the list of our students');
+  res.write('This is the list of our students\n');
   countStudents(process.argv[2])
     .then(({ groupByField, studentsCount }) => {
       res.write(`Number of students: ${studentsCount}\n`);
