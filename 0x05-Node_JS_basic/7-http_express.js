@@ -9,10 +9,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  const path = process.argv.length > 2 ? process.argv[2] : '';
   res.statusCode = 200;
   res.write('This is the list of our students');
-  countStudents(path)
+  countStudents(process.argv[2])
     .then(({ groupByField, studentsCount }) => {
       res.write(`Number of students: ${studentsCount}\n`);
       const fields = Object.entries(groupByField);
@@ -24,7 +23,6 @@ app.get('/students', (req, res) => {
         }
         res.write(`Number of students in ${field[0]}: ${field[1].length}. List: ${field[1].join(', ')}\n`);
       }
-      res.end();
     })
     .catch((err) => res.write(err.message))
     .finally(() => res.end());
