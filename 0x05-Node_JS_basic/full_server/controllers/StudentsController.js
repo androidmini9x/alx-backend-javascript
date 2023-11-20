@@ -19,7 +19,8 @@ class StudentsController {
       })
       .catch((err) => {
         response.statusCode = 500;
-        response.send(err.message);
+        response.write(err.message);
+        response.end();
       });
   }
 
