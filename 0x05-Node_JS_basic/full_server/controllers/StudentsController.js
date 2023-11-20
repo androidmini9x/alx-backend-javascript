@@ -10,7 +10,7 @@ class StudentsController {
         for (let i = 0; i < fields.length; i += 1) {
           const field = fields[i];
           if (i === fields.length - 1) {
-            response.write(`Number of students in ${field[0]}: ${field[1].length}. List: ${field[1].join(', ')}`);
+            response.write(`Number of students in ${field[0]}: ${field[1].length}. List: ${field[1].join(', ')}\n`);
             break;
           }
           response.write(`Number of students in ${field[0]}: ${field[1].length}. List: ${field[1].join(', ')}\n`);
@@ -28,7 +28,7 @@ class StudentsController {
     const { major } = request.params;
     if (major !== 'CS' && major !== 'SWE') {
       response.statusCode = 500;
-      response.write('Major parameter must be CS or SWE');
+      response.write('Major parameter must be CS or SWE\n');
       response.end();
     }
 
@@ -36,7 +36,7 @@ class StudentsController {
       .then(({ groupByField }) => {
         response.statusCode = 200;
         const field = groupByField[major];
-        response.write(`List: ${field.join(', ')}`);
+        response.write(`List: ${field.join(', ')}\n`);
         response.end();
       })
       .catch((err) => {
