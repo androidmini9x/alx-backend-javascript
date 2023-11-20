@@ -2,7 +2,7 @@ const readDatabase = require('../utils');
 
 class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then(({ groupByField }) => {
         response.statusCode = 200;
         response.write('This is the list of our students\n');
@@ -32,7 +32,7 @@ class StudentsController {
       response.end();
     }
 
-    readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then(({ groupByField }) => {
         response.statusCode = 200;
         const field = groupByField[major];
