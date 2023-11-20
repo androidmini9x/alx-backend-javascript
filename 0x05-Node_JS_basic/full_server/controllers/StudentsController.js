@@ -27,7 +27,8 @@ class StudentsController {
     const { major } = request.params;
     if (major !== 'CS' && major !== 'SWE') {
       response.statusCode = 500;
-      response.end('Major parameter must be CS or SWE');
+      response.write('Major parameter must be CS or SWE');
+      response.end();
     }
 
     readDatabase('./database.csv')
@@ -39,7 +40,8 @@ class StudentsController {
       })
       .catch((err) => {
         response.statusCode = 500;
-        response.send(err.message);
+        response.write(err.message);
+        response.end();
       });
   }
 }

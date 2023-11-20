@@ -21,11 +21,6 @@ export default function readDatabase(path) {
           groupByField[key].push(stuProp[0]);
         }
 
-        console.log(`Number of students: ${students.length}`);
-        for (const [key, value] of Object.entries(groupByField)) {
-          console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
-        }
-
         resolve({ groupByField, studentsCount: students.length });
       }
     });
