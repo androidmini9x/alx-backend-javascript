@@ -4,13 +4,13 @@ const host = 'localhost';
 const port = 1245;
 
 const app = http.createServer((_, res) => {
-  const text = 'Hello Holberton School!';
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Content-Length', text.length);
   res.statusCode = 200;
-  res.end(text);
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello Holberton School!');
 });
 
 app.listen(port, host, () => {
   console.log(`Server is listening on: ${host}:${port}`);
 });
+
+module.exports = app;

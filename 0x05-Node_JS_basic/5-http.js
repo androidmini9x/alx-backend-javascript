@@ -32,3 +32,5 @@ const app = http.createServer((req, res) => {
 app.listen(port, host, () => {
   console.log(`Server is listening on: ${host}:${port}`);
 });
+
+module.exports = app;
