@@ -9,8 +9,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
+  const path = process.argv.length > 2 ? process.argv[2] : '';
+  res.statusCode = 200;
   res.write('This is the list of our students');
-  countStudents(process.argv[2])
+  countStudents(path)
     .then(({ groupByField, studentsCount }) => {
       res.write(`Number of students: ${studentsCount}\n`);
       const fields = Object.entries(groupByField);
