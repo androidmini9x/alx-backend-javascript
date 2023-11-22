@@ -3,6 +3,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "mocha": "^10.2.0"
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "sinon": "^7.5.0"
   }
 }
