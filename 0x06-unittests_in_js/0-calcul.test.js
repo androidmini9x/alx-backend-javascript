@@ -11,4 +11,7 @@ describe('calculateNumber', () => {
   it('Two float number', () => {
     assert.equal(calculateNumber(1.2, 3.7), 5);
   });
+  it('Two float number', () => {
+    assert.equal(calculateNumber(1.5, 3.7), 6);
+  });
 });
