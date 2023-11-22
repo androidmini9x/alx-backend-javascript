@@ -2,9 +2,9 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {
-    "chai": "^4.3.10",
+  "devDependencies": {
     "mocha": "^10.2.0",
+    "chai": "^4.3.10",
     "sinon": "^7.5.0"
   }
 }
